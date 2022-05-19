@@ -1,4 +1,5 @@
-public class TestePilha {
+
+/*public class TestePilha {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -50,3 +51,4 @@ public class TestePilha {
 	
 
 }
+*/

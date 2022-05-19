@@ -1,5 +1,5 @@
 
-
+/*
 class Main {
   public static void main(String[] args) {
     Fila f = new Fila();
@@ -18,3 +18,4 @@ class Main {
 			f.dequeue();
   }
 }
+*/

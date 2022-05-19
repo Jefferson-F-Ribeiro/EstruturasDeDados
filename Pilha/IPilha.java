@@ -1,12 +1,20 @@
 public interface IPilha {
 
-	void push(Object o);
+	void pushRubro(int o);
 
-	Object pop() throws PilhaVaziaException;
+	int popRubro() throws PilhaVaziaException;
 
-	Object top() throws PilhaVaziaException;
+	int topRubro() throws PilhaVaziaException;
 
-	boolean isEmpty();
+  boolean isEmptyRubro();
+
+  void pushNegro(int o);
+
+	int popNegro() throws PilhaVaziaException;
+
+	int topNegro() throws PilhaVaziaException;
+
+  boolean isEmptyNegro();
 
 	int size();
 
