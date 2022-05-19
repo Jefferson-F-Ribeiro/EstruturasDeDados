@@ -1,24 +1,59 @@
 public class Pilha implements IPilha{
 
-  @Override
-  void push(Object o){
-    
-  }
+  int tamanhoInicial = 10;
 
-  @Override
-	Object pop() throws PilhaVaziaException{
-    
-  }
+  int topo;
 
-  @Override
-	Object top() throws PilhaVaziaException{
-    
-  }
+  int a[];
 
-  @Override
-	boolean isEmpty(){
-    
+  int tamanho;
+
+  Pilha(){
+    topo = -1;
   }
   
-	int size();
+  @Override
+  public void push(Object o){
+    if (topo >= (tamanhoInicial-1)){
+      System.out.println("Pilha cheia > Duplicar pilha");
+    }
+
+    else{
+      this.a[++topo] = (int) o;
+    }
+  }
+
+  @Override
+	public Object pop() throws PilhaVaziaException{
+    if(topo < 0){
+      //throw new PilhaVaziaException("Pilha vazia!");
+      System.out.println("Pilha vazia!");
+    }
+    else{
+      int x = a[topo--];
+      return (Object) x;
+    }
+  }
+
+  @Override
+	public Object top() throws PilhaVaziaException{
+    if (topo < 0){
+      //throw new PilhaVaziaException("Pilha vazia!");
+      System.out.println("Pilha vazia!");
+    }
+    else{
+      return (Object) a[topo];
+    }
+  }
+
+  @Override
+	public boolean isEmpty(){
+    return (topo < 0);
+  }
+  
+  @Override
+	public int size(){
+    return this.tamanho;
+  }
+  
 }
