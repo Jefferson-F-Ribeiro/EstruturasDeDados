@@ -1,6 +1,6 @@
 
 
-class Teste {
+class Main {
   public static void main(String[] args) {
 
     try{
@@ -16,10 +16,13 @@ class Teste {
       a.pushNegro(i*4);
       System.out.println("Topo Negro:" + a.topNegro());
     }
-
+      
+    a.imprimir();
 
     a.popRubro();
     a.popNegro();
+
+    
 
    
     /*
@@ -37,6 +40,8 @@ class Teste {
     System.out.println("Topo Rubro:" + a.topRubro());
     System.out.println("Topo Negro:" + a.topNegro());
     System.out.println(a.size());
+
+    a.imprimir();
     
 
     

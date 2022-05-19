@@ -43,7 +43,7 @@ public class Pilha implements IPilha{
     }
     else{
       this.topoRubro -= 1;
-      int x = a[topoRubro--];
+      int x = a[topoRubro];
       this.tamanho -= 1;
       return x;
     }  
@@ -133,7 +133,7 @@ public class Pilha implements IPilha{
     }
     else{
       this.topoNegro += 1;
-      int x = a[this.topoNegro++];
+      int x = a[this.topoNegro];
       this.tamanho -= 1;
       return x;
     }  
