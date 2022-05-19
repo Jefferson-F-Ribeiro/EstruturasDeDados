@@ -22,6 +22,19 @@ class Main {
     a.popRubro();
     a.popNegro();
 
+    a.pushRubro(77);
+    a.pushNegro(99);
+
+    a.pushRubro(101);
+
+    a.imprimir();
+
+    a.pushRubro(25);
+
+   
+
+    a.pushRubro(667);
+
     
 
    

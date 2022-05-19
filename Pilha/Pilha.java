@@ -23,8 +23,8 @@ public class Pilha implements IPilha{
   
   @Override
   public void pushRubro(int o){
-    if (topoRubro >= (tamanhoInicial-1)){
-      System.out.println("Pilha Rubra cheia > Duplicar pilha");
+    if (topoRubro >= (tamanhoInicial/2)-1){
+      System.out.println("Tentou adicionar: " + o + " no lugar: " + tamanhoInicial/2 + " Pilha Rubra cheia > Duplicar pilha");
       this.duplicarArray();
       this.pushRubro(o);
     }
@@ -72,41 +72,53 @@ public class Pilha implements IPilha{
   }
 
   public void duplicarArray(){
+  
+    int[] newA = new int[this.tamanhoInicial*2];
 
-    int[] newR = new int [this.tamanhoInicial%2];
-    int[] newN = new int [this.tamanhoInicial%2];
+    for (int i = 0; i<this.tamanhoInicial/2; i++){
+      newA[i] = this.a[i];
+      newA[(this.tamanhoInicial*2)-i-1] = this.a[this.tamanhoInicial-i-1];
+    }
+    this.tamanhoInicial = this.tamanhoInicial*2;
+    
+    this.a = new int[tamanhoInicial];
+    a = newA;
+    
+/*
+    int[] newR = new int [this.tamanhoInicial/2];
+    int[] newN = new int [this.tamanhoInicial/2];
     int[] newA = new int [this.tamanhoInicial*2];
     
-    for (int i = 0; i<this.tamanhoInicial%2;i++){
+    for (int i = 0; i<this.tamanhoInicial/2;i++){
       newR[i] = this.a[i]; 
     }
 
-    for (int i = (tamanhoInicial%2 + 1); i<this.tamanhoInicial;i++){
+    for (int i = (tamanhoInicial/2)-1; i<this.tamanhoInicial;i++){
       newN[i] = this.a[i]; 
     }
 
-    for (int i = 0; i< tamanhoInicial%2; i++){
+    for (int i = 0; i< tamanhoInicial/2; i++){
       newA[i] = newR[i];
     }
 
-    for (int i = (tamanhoInicial*2)-1; i> tamanhoInicial%2; i--){
+    for (int i = (tamanhoInicial*2)-1; i> tamanhoInicial/2; i--){
       newA[i] = newN[i];
     }    
 
     this.a = new int[this.tamanhoInicial*2];
 
-    for (int i = 0; i< tamanhoInicial%2; i++){
+    for (int i = 0; i< tamanhoInicial/2; i++){
       this.a[i] = newR[i];
     }
 
-    for (int i = (tamanhoInicial*2)-1; i> tamanhoInicial%2; i--){
+    for (int i = (tamanhoInicial*2)-1; i> tamanhoInicial/2; i--){
       this.a[i] = newN[i];
     }  
 
     this.tamanhoInicial = this.tamanhoInicial*2;
 
     System.out.println("Pilha duplicada");
-    
+    */
   }
 
   //Implementação Pilha Negra
