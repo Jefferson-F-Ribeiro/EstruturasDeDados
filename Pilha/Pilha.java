@@ -14,6 +14,7 @@ public class Pilha implements IPilha{
 
   Pilha(){
     this.topoRubro = -1;
+    this.topoNegro = 10;
     this.tamanho = 0;
     this.a = new int[tamanhoInicial];
   }
@@ -80,20 +81,29 @@ public class Pilha implements IPilha{
       newR[i] = this.a[i]; 
     }
 
-    for (int i = tamanhoInicial%2; i<this.tamanhoInicial;i++){
+    for (int i = (tamanhoInicial%2 + 1); i<this.tamanhoInicial;i++){
       newN[i] = this.a[i]; 
     }
 
-    
-
-    this.tamanhoInicial = tamanhoInicial*2;
-
-    this.a = new int[this.tamanhoInicial];
-
-    for (int i = 0; i<this.tamanhoInicial;i++){
-      this.a[i] = newA[i]; 
+    for (int i = 0; i< tamanhoInicial%2; i++){
+      newA[i] = newR[i];
     }
-    
+
+    for (int i = (tamanhoInicial*2)-1; i> tamanhoInicial%2; i--){
+      newA[i] = newN[i];
+    }    
+
+    this.a = new int[this.tamanhoInicial*2];
+
+    for (int i = 0; i< tamanhoInicial%2; i++){
+      this.a[i] = newR[i];
+    }
+
+    for (int i = (tamanhoInicial*2)-1; i> tamanhoInicial%2; i--){
+      this.a[i] = newN[i];
+    }  
+
+    this.tamanhoInicial = this.tamanhoInicial*2;
 
     System.out.println("Pilha duplicada");
     
@@ -146,6 +156,12 @@ public class Pilha implements IPilha{
     return (topoNegro > this.tamanhoInicial-1);
   }
 
+  public void imprimir(){
+    System.out.println("entrou");
+    for(int i = 0; i < this.tamanhoInicial;i++){
+      System.out.println(this.a[i]);
+    }
+  }
   
   
 }
