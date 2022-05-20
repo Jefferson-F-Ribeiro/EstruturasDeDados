@@ -38,17 +38,10 @@ class Main {
     
 
    
-    /*
+    
 
     a.popRubro();
     a.popRubro();
-    a.popRubro();
-    a.popRubro();
-    a.popRubro();
-    a.popRubro();
-    a.popRubro();
-    a.popRubro();
-    a.popRubro();*/
       
     System.out.println("Topo Rubro:" + a.topRubro());
     System.out.println("Topo Negro:" + a.topNegro());
