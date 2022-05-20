@@ -57,7 +57,7 @@ public class Pilha implements IPilha{
   @Override
 	public int topRubro() throws PilhaVaziaException{
 
-    if (topoRubro < 0){
+    if (this.topoRubro < 0){
       throw new PilhaVaziaException("Pilha Rubra vazia");
       }
       
@@ -96,7 +96,7 @@ public class Pilha implements IPilha{
 
   @Override
   public void pushNegro(int o){
-    if (topoNegro <= ((this.tamanhoInicial % 2)-1)){
+    if (topoNegro <= ((this.tamanhoInicial/2))){
       System.out.println("Pilha Negra cheia > Duplicar pilha");
       this.duplicarArray();
       this.pushNegro(o);
@@ -112,7 +112,7 @@ public class Pilha implements IPilha{
 
   @Override
 	public int popNegro() throws PilhaVaziaException{
-    if(topoNegro > this.tamanhoInicial-1){
+    if(this.topoNegro >= this.tamanhoInicial){
       throw new PilhaVaziaException("Pilha Negra vazia!");
     }
     else{
@@ -143,8 +143,9 @@ public class Pilha implements IPilha{
 
   public void imprimir(){
     for(int i = 0; i < this.tamanhoInicial;i++){
-      System.out.println("[" + this.a[i] + "]");
+      System.out.print("[" + this.a[i] + "] ");
     }
+    System.out.println("\n");
   }
   
   
